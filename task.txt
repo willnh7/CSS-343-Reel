@@ -1,0 +1,17 @@
+"type": "cppbuild",
+    "label": "C/C++: gcc.exe build active file",
+    "command": "/usr/bin/g++",
+    "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Wno-sign-compare",
+        "-Werror",
+        "${workspaceFolder}/*.cpp",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+    ],
+
+
+// This is for task.json for the checking
