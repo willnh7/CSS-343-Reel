@@ -1,0 +1,6 @@
+Mon Mar 30 05:34:54 PM UTC 2026
+hello.cpp:1:9: error: #pragma once in main file [-Werror]
+    1 | #pragma once
+      |         ^~~~
+cc1plus: all warnings being treated as errors
+valgrind: ./a.out: No such file or directory
