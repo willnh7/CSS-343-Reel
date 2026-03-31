@@ -1,0 +1,32 @@
+6.6.87.2-microsoft-standard-WSL2
+Tue Mar 31 16:31:53 UTC 2026
+/home/cssuwbstudent/CSS343/Week1/HighRise/CircularLinkedList.h:19:2: error: expected ';' after class [clang-diagnostic-error]
+   19 | }
+      |  ^
+      |  ;
+/home/cssuwbstudent/CSS343/Week1/HighRise/CircularLinkedListTests.cpp:6:24: warning: do not use 'endl' with streams; use '\n' instead [performance-avoid-endl]
+    6 |     cout << "Bleht" << endl;
+      |                        ^~~~
+      |                        '\n'
+/home/cssuwbstudent/CSS343/Week1/HighRise/CircularLinkedListTests.cpp:7:24: warning: no header providing "std::string" is directly included [misc-include-cleaner]
+    2 | #include "CircularLinkedList.h"
+    3 | using namespace std;
+    4 | 
+    5 | int main() {
+    6 |     cout << "Bleht" << endl;
+    7 |     CircularLinkedList<string> residents({"Laing", "Wilder",  "Frobisher"})
+      |                        ^
+/home/cssuwbstudent/CSS343/Week1/HighRise/CircularLinkedListTests.cpp:7:32: error: no matching constructor for initialization of 'CircularLinkedList<string>' (aka 'CircularLinkedList<basic_string<char>>') [clang-diagnostic-error]
+    7 |     CircularLinkedList<string> residents({"Laing", "Wilder",  "Frobisher"})
+      |                                ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/CSS343/Week1/HighRise/CircularLinkedList.h:12:7: note: candidate constructor (the implicit copy constructor) not viable: cannot convert initializer list argument to 'const CircularLinkedList<basic_string<char>>'
+   12 | class CircularLinkedList  {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/CSS343/Week1/HighRise/CircularLinkedList.h:12:7: note: candidate constructor (the implicit move constructor) not viable: cannot convert initializer list argument to 'CircularLinkedList<basic_string<char>>'
+   12 | class CircularLinkedList  {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/CSS343/Week1/HighRise/CircularLinkedList.h:12:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+/home/cssuwbstudent/CSS343/Week1/HighRise/CircularLinkedListTests.cpp:7:76: error: expected ';' at end of declaration [clang-diagnostic-error]
+    7 |     CircularLinkedList<string> residents({"Laing", "Wilder",  "Frobisher"})
+      |                                                                            ^
+      |                                                                            ;
