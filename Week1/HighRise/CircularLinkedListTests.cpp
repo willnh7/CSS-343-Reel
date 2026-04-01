@@ -1,10 +1,11 @@
 #include <iostream>
 #include "CircularLinkedList.h"
+#include <string>
 using namespace std;
 
 int main() {
-    cout << "Bleht" << endl;
-    CircularLinkedList<string> residents({"Laing", "Wilder",  "Frobisher"})
+    cout << "Bleht\n";
+    CircularLinkedList<string> residents({"Laing", "Wilder",  "Frobisher"});
     
     /*
    
