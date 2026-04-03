@@ -1,33 +1,35 @@
-Fri Apr  3 03:30:08 UTC 2026
-==42728== Memcheck, a memory error detector
-==42728== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
-==42728== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
-==42728== Command: ./a.out
-==42728== 
+Fri Apr  3 21:02:36 UTC 2026
+==97516== Memcheck, a memory error detector
+==97516== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==97516== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==97516== Command: ./a.out
+==97516== 
 Bleht
 This takes a ARRAY
 Empty List
 Laing Wilder Frobisher 
-The size of the residents is: 3
-
-The size of the residents is: 0
-The winner is Laing!
+Eaten: Wilder
+The winner is Frobisher!
 
 Clearing a already empty list!
-
-Deleting Node: Laing
-Moving to Node: Wilder
-
-Deleting Node: Wilder
-Moving to Node: Frobisher
-
 Deleting Node: Frobisher
-==42728== 
-==42728== HEAP SUMMARY:
-==42728==     in use at exit: 0 bytes in 0 blocks
-==42728==   total heap usage: 5 allocs, 5 frees, 76,920 bytes allocated
-==42728== 
-==42728== All heap blocks were freed -- no leaks are possible
-==42728== 
-==42728== For lists of detected and suppressed errors, rerun with: -s
-==42728== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==97516== 
+==97516== HEAP SUMMARY:
+==97516==     in use at exit: 40 bytes in 1 blocks
+==97516==   total heap usage: 5 allocs, 4 frees, 76,920 bytes allocated
+==97516== 
+==97516== 40 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==97516==    at 0x4844FB5: operator new(unsigned long) (vg_replace_malloc.c:487)
+==97516==    by 0x4019C3: CircularLinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::addToList(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (CircularLinkedList.h:63)
+==97516==    by 0x40162F: CircularLinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::CircularLinkedList(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (CircularLinkedList.h:43)
+==97516==    by 0x4012DE: main (CircularLinkedListTests.cpp:8)
+==97516== 
+==97516== LEAK SUMMARY:
+==97516==    definitely lost: 40 bytes in 1 blocks
+==97516==    indirectly lost: 0 bytes in 0 blocks
+==97516==      possibly lost: 0 bytes in 0 blocks
+==97516==    still reachable: 0 bytes in 0 blocks
+==97516==         suppressed: 0 bytes in 0 blocks
+==97516== 
+==97516== For lists of detected and suppressed errors, rerun with: -s
+==97516== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
