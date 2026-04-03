@@ -1,6 +1,2 @@
 6.6.87.2-microsoft-standard-WSL2
-Wed Apr  1 17:03:13 UTC 2026
-/home/cssuwbstudent/CSS343/Week1/HighRise/CircularLinkedListTests.cpp:8:5: warning: variable 'residents' of type 'CircularLinkedList<string>' (aka 'CircularLinkedList<basic_string<char>>') can be declared 'const' [misc-const-correctness]
-    8 |     CircularLinkedList<string> residents({"Laing", "Wilder",  "Frobisher"});
-      |     ^
-      |                                const 
+Fri Apr  3 03:30:07 UTC 2026
