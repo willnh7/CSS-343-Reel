@@ -1,35 +1,43 @@
-Fri Apr  3 21:02:36 UTC 2026
-==97516== Memcheck, a memory error detector
-==97516== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
-==97516== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
-==97516== Command: ./a.out
-==97516== 
-Bleht
-This takes a ARRAY
-Empty List
-Laing Wilder Frobisher 
-Eaten: Wilder
-The winner is Frobisher!
-
-Clearing a already empty list!
-Deleting Node: Frobisher
-==97516== 
-==97516== HEAP SUMMARY:
-==97516==     in use at exit: 40 bytes in 1 blocks
-==97516==   total heap usage: 5 allocs, 4 frees, 76,920 bytes allocated
-==97516== 
-==97516== 40 bytes in 1 blocks are definitely lost in loss record 1 of 1
-==97516==    at 0x4844FB5: operator new(unsigned long) (vg_replace_malloc.c:487)
-==97516==    by 0x4019C3: CircularLinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::addToList(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (CircularLinkedList.h:63)
-==97516==    by 0x40162F: CircularLinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::CircularLinkedList(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (CircularLinkedList.h:43)
-==97516==    by 0x4012DE: main (CircularLinkedListTests.cpp:8)
-==97516== 
-==97516== LEAK SUMMARY:
-==97516==    definitely lost: 40 bytes in 1 blocks
-==97516==    indirectly lost: 0 bytes in 0 blocks
-==97516==      possibly lost: 0 bytes in 0 blocks
-==97516==    still reachable: 0 bytes in 0 blocks
-==97516==         suppressed: 0 bytes in 0 blocks
-==97516== 
-==97516== For lists of detected and suppressed errors, rerun with: -s
-==97516== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+Sat Apr  4 18:40:35 UTC 2026
+==93225== Memcheck, a memory error detector
+==93225== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==93225== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==93225== Command: ./a.out
+==93225== 
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  No Negatives allowed!
+==93225== 
+==93225== Process terminating with default action of signal 6 (SIGABRT)
+==93225==    at 0x4C0DA6C: __pthread_kill_implementation (in /usr/lib64/libc.so.6)
+==93225==    by 0x4BC0685: raise (in /usr/lib64/libc.so.6)
+==93225==    by 0x4BAA832: abort (in /usr/lib64/libc.so.6)
+==93225==    by 0x4904B20: ??? (in /usr/lib64/libstdc++.so.6.0.29)
+==93225==    by 0x491052B: ??? (in /usr/lib64/libstdc++.so.6.0.29)
+==93225==    by 0x4910596: std::terminate() (in /usr/lib64/libstdc++.so.6.0.29)
+==93225==    by 0x49107F8: __cxa_throw (in /usr/lib64/libstdc++.so.6.0.29)
+==93225==    by 0x402B03: CircularLinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::removeNext(int) (CircularLinkedList.h:91)
+==93225==    by 0x40209B: main (CircularLinkedListTests.cpp:75)
+==93225== 
+==93225== HEAP SUMMARY:
+==93225==     in use at exit: 77,150 bytes in 8 blocks
+==93225==   total heap usage: 20 allocs, 12 frees, 77,555 bytes allocated
+==93225== 
+==93225== 144 bytes in 1 blocks are possibly lost in loss record 6 of 8
+==93225==    at 0x484482F: malloc (vg_replace_malloc.c:446)
+==93225==    by 0x490F383: __cxa_allocate_exception (in /usr/lib64/libstdc++.so.6.0.29)
+==93225==    by 0x402AE1: CircularLinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::removeNext(int) (CircularLinkedList.h:91)
+==93225==    by 0x40209B: main (CircularLinkedListTests.cpp:75)
+==93225== 
+==93225== LEAK SUMMARY:
+==93225==    definitely lost: 0 bytes in 0 blocks
+==93225==    indirectly lost: 0 bytes in 0 blocks
+==93225==      possibly lost: 144 bytes in 1 blocks
+==93225==    still reachable: 77,006 bytes in 7 blocks
+==93225==                       of which reachable via heuristic:
+==93225==                         stdstring          : 46 bytes in 1 blocks
+==93225==         suppressed: 0 bytes in 0 blocks
+==93225== Reachable blocks (those to which a pointer was found) are not shown.
+==93225== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==93225== 
+==93225== For lists of detected and suppressed errors, rerun with: -s
+==93225== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

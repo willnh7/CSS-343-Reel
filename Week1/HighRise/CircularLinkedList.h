@@ -19,26 +19,24 @@ class CircularLinkedList  {
         // Start with the constructors
         CircularLinkedList() {
             // single node circular list
+            // Nothing in here?
             last = new Node(T());
             last->next = last;
         }
         /**
-         * 
-         * 
-         * 
+         * An initializer_list constructor so that it can create a circular linked list.
+         * This is done to accept braced inputs in the parameter.
          * 
          * Precondition: called as CircularLinkedList<string> myList({"Ling", "Bob", "Harry"}); 
          * The list should be created via a already formatted list
          * Post condition: a newly created circular linked list.
-         * 
          */
         CircularLinkedList(const std::initializer_list<T>& array){
             // Empty list, nothing is done
             if(array.size() == 0) {
-                std::cout << "Empty List\n";
+                last = nullptr;
             } else {
-                 // if it is not a empty list it will create a array
-                std::cout << "This takes a ARRAY\n";
+                // if it is not a empty list it will create a array
                 for(const T& val : array) {
                     addToList(val);
                 }
@@ -48,7 +46,6 @@ class CircularLinkedList  {
         /**
          * The destructor for our circular linked list that calls the function
          * clear() so that all memory is deallocated and freed so that there are no memory leaks.
-         * 
          */
         ~CircularLinkedList() {
             clear();
@@ -61,7 +58,6 @@ class CircularLinkedList  {
          */
         void addToList(const T& value) {
             Node* newNode = new Node(value);
-
             if(!last) {
                 // for a circular linked list, there won't be a nullptr as it will 
                 // wrap around itself essentially
@@ -82,13 +78,24 @@ class CircularLinkedList  {
          * the node after the deleted node
          * EX: {"Ling", "Bob", "Jennet"} the head is Ling, after deletion, it should be
          * Jennet.
+         * Precondition: k must be a positive constant, k >= 0;
+         * Postcondition: TODO
          */
         std::string removeNext(int k) {
-            if(size() <= 1 ) {
-                return last->data;
+            // Empty list
+            if(last == nullptr){
+                return "List is empty";
             }
+            // No negatives allowed, simply having positive constants
             if(k < 0) {
-                return "None were removed, no negatives";
+                return "None were removed, no negatives!";
+            }
+            // One node
+            if(last->next == last) {
+                T val = last->data;
+                delete last;
+                last = nullptr;
+                return val;
             }
             std::string removed = "";
             Node* prev = last;
@@ -100,29 +107,31 @@ class CircularLinkedList  {
             }
             Node* nodeToDelete = prev->next;
             removed = nodeToDelete->data;
+            // if the node being deleted is the last item, make the last the prev node
             if(nodeToDelete == last) {
                 last = prev;
             }
+
             prev->next = nodeToDelete->next;
-            
             delete nodeToDelete;
             nodeToDelete = nullptr;
 
-            last->next= prev->next;
+            last= prev;
             return removed;
         }
         /**
-         * This function TODO: Explain why it is set up as such.
+         * This function simply gets our current heads data, using the last node
+         * to find the head. This is done soley for the assignment of getting the winner which will be often a 
+         * single node in the list.
          */
         T getCurrent(){
+            if(last == nullptr) throw std::runtime_error("Empty list");
             return last->next->data;
         }
         /**
          * This function simply goes through our circular linked list and prints out all the 
          * elements from the start to the end of our list.
          * Serves mainly for debugging and tracking.
-         * 
-         * 
          */
         void printList() {
             // empty list
@@ -151,13 +160,12 @@ class CircularLinkedList  {
             Node* head = last->next;
             // Break the circular link
             last->next = nullptr;
-            Node* nextNode = nullptr;
             
-            // Since we start at the head, we must use do while 
+            // Make sure head isn't a nullptr, so no nullptr undefined behavior.
             while(head != nullptr) {
                 // get the nextNode immediately since we know curr is not nullptr
                 // no errors.
-                nextNode = head->next;
+                Node* nextNode = head->next;
                 std::cout << "Deleting Node: " << head->data << "\n";
                 // If the next node havent reached the end, print which node we are moving to
                 // and assign the curr node to the next node we have to delete
@@ -174,20 +182,20 @@ class CircularLinkedList  {
          * Gets the size of the circular linked list.
          * @return size of list
          */
-        //TODO: ERR in size after deletion
         int size(){
+            // List doesn't have any nodes since last points to head.
             if(last == nullptr) {
-                // TODO; FIX ERRORS
+                return 0;
             }
+
             int count = 0;
             Node* curr = last->next;
-            if(curr == last) {
-                return count;
-            }
+            // Count the items in list
             do {
                 count++;
                 curr = curr->next;
             } while (curr != last->next);
+
             return count;
         }
 };
