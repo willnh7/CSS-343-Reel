@@ -1,43 +1,64 @@
-Sat Apr  4 18:40:35 UTC 2026
-==93225== Memcheck, a memory error detector
-==93225== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
-==93225== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
-==93225== Command: ./a.out
-==93225== 
-terminate called after throwing an instance of 'std::runtime_error'
-  what():  No Negatives allowed!
-==93225== 
-==93225== Process terminating with default action of signal 6 (SIGABRT)
-==93225==    at 0x4C0DA6C: __pthread_kill_implementation (in /usr/lib64/libc.so.6)
-==93225==    by 0x4BC0685: raise (in /usr/lib64/libc.so.6)
-==93225==    by 0x4BAA832: abort (in /usr/lib64/libc.so.6)
-==93225==    by 0x4904B20: ??? (in /usr/lib64/libstdc++.so.6.0.29)
-==93225==    by 0x491052B: ??? (in /usr/lib64/libstdc++.so.6.0.29)
-==93225==    by 0x4910596: std::terminate() (in /usr/lib64/libstdc++.so.6.0.29)
-==93225==    by 0x49107F8: __cxa_throw (in /usr/lib64/libstdc++.so.6.0.29)
-==93225==    by 0x402B03: CircularLinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::removeNext(int) (CircularLinkedList.h:91)
-==93225==    by 0x40209B: main (CircularLinkedListTests.cpp:75)
-==93225== 
-==93225== HEAP SUMMARY:
-==93225==     in use at exit: 77,150 bytes in 8 blocks
-==93225==   total heap usage: 20 allocs, 12 frees, 77,555 bytes allocated
-==93225== 
-==93225== 144 bytes in 1 blocks are possibly lost in loss record 6 of 8
-==93225==    at 0x484482F: malloc (vg_replace_malloc.c:446)
-==93225==    by 0x490F383: __cxa_allocate_exception (in /usr/lib64/libstdc++.so.6.0.29)
-==93225==    by 0x402AE1: CircularLinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::removeNext(int) (CircularLinkedList.h:91)
-==93225==    by 0x40209B: main (CircularLinkedListTests.cpp:75)
-==93225== 
-==93225== LEAK SUMMARY:
-==93225==    definitely lost: 0 bytes in 0 blocks
-==93225==    indirectly lost: 0 bytes in 0 blocks
-==93225==      possibly lost: 144 bytes in 1 blocks
-==93225==    still reachable: 77,006 bytes in 7 blocks
-==93225==                       of which reachable via heuristic:
-==93225==                         stdstring          : 46 bytes in 1 blocks
-==93225==         suppressed: 0 bytes in 0 blocks
-==93225== Reachable blocks (those to which a pointer was found) are not shown.
-==93225== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==93225== 
-==93225== For lists of detected and suppressed errors, rerun with: -s
-==93225== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+Sat Apr  4 19:02:52 UTC 2026
+==6687== Memcheck, a memory error detector
+==6687== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==6687== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==6687== Command: ./a.out
+==6687== 
+[PASSED] TEST: Empty list size
+ | Expected: 0 | Actual: 0
+
+[PASSED] TEST: Remove off empty
+ | Expected: List is empty | Actual: List is empty
+
+[PASSED] TEST: List of size 3
+ | Expected: 3 | Actual: 3
+
+Eaten: Wilder
+Eaten: Laing
+The winner is Frobisher!
+[PASSED] TEST: Winner of 3
+ | Expected: Frobisher | Actual: Frobisher
+
+[PASSED] TEST: List of size 4
+ | Expected: 4 | Actual: 4
+
+Eaten: Wilder
+Eaten: Kinda
+Eaten: Frobisher
+[PASSED] TEST: Winner of 4
+ | Expected: Laing | Actual: Laing
+
+[PASSED] TEST: List of size 4
+ | Expected: 4 | Actual: 4
+
+Eaten: Frobisher
+Eaten: Wilder
+Eaten: Kinda
+[PASSED] TEST: Winner of 4, k = 2
+ | Expected: Laing | Actual: Laing
+
+[PASSED] TEST: 1 node list size
+ | Expected: 1 | Actual: 1
+
+[PASSED] TEST: Negative remove
+ | Expected: None were removed, no negatives! | Actual: None were removed, no negatives!
+
+[PASSED] TEST: Remove only node
+ | Expected: Liasy | Actual: Liasy
+
+[TEST PASSED]: 11/11
+
+Clearing a already empty list!
+Deleting Node: Laing
+Deleting Node: Laing
+Deleting Node: Frobisher
+Clearing a already empty list!
+==6687== 
+==6687== HEAP SUMMARY:
+==6687==     in use at exit: 0 bytes in 0 blocks
+==6687==   total heap usage: 20 allocs, 20 frees, 77,416 bytes allocated
+==6687== 
+==6687== All heap blocks were freed -- no leaks are possible
+==6687== 
+==6687== For lists of detected and suppressed errors, rerun with: -s
+==6687== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

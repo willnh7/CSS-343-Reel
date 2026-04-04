@@ -1,8 +1,13 @@
 #ifndef CIRCULAR_LINKED_LIST_H
 #define CIRCULAR_LINKED_LIST_H
 
-// fill the list with the array items
+// fill the list with the LIST items
 // default creates one node circular list 
+/**
+ * This class simulates a circular linked list with methods implemented to reflect
+ * the assignment HighRise. Specifications include shifting the head to the node after the 
+ * deleted node to play the game high rise.
+ */
 template<typename T> 
 class CircularLinkedList  {
     private:
@@ -31,13 +36,13 @@ class CircularLinkedList  {
          * The list should be created via a already formatted list
          * Post condition: a newly created circular linked list.
          */
-        CircularLinkedList(const std::initializer_list<T>& array){
+        CircularLinkedList(const std::initializer_list<T>& LIST){
             // Empty list, nothing is done
-            if(array.size() == 0) {
+            if(LIST.size() == 0) {
                 last = nullptr;
             } else {
-                // if it is not a empty list it will create a array
-                for(const T& val : array) {
+                // if it is not a empty list it will create a LIST
+                for(const T& val : LIST) {
                     addToList(val);
                 }
             }
@@ -56,8 +61,8 @@ class CircularLinkedList  {
          * 
          * @para: a data value 
          */
-        void addToList(const T& value) {
-            Node* newNode = new Node(value);
+        void addToList(const T& VALUE) {
+            Node* newNode = new Node(VALUE);
             if(!last) {
                 // for a circular linked list, there won't be a nullptr as it will 
                 // wrap around itself essentially
@@ -70,16 +75,16 @@ class CircularLinkedList  {
             }
         }
         /**
-         * This function deletes the next node from the head node,
-         * changing the pointers to reflect the deletion and also moving the head pointer to the node
-         * that was after the deleted one.
+         * This function deletes the next kth node from the head node,
+         * changing the pointers to reflect the deletion and also moving the last pointer to the node
+         * that before the deleted one to ensure a rotation occurs.
          * Precondition: the int next is a constant
          * Post condition: a shifted circular linked list, head begining from 
          * the node after the deleted node
          * EX: {"Ling", "Bob", "Jennet"} the head is Ling, after deletion, it should be
          * Jennet.
          * Precondition: k must be a positive constant, k >= 0;
-         * Postcondition: TODO
+         * Postcondition: removed kth node
          */
         std::string removeNext(int k) {
             // Empty list
@@ -90,7 +95,7 @@ class CircularLinkedList  {
             if(k < 0) {
                 return "None were removed, no negatives!";
             }
-            // One node
+            // One node deletion
             if(last->next == last) {
                 T val = last->data;
                 delete last;
@@ -111,12 +116,14 @@ class CircularLinkedList  {
             if(nodeToDelete == last) {
                 last = prev;
             }
-
+            // Fill in the gap
             prev->next = nodeToDelete->next;
+            // delete and free memory
             delete nodeToDelete;
             nodeToDelete = nullptr;
-
-            last= prev;
+            // rotation, the head will be changed due to last being now assigned to the prev node
+            // before deletion 
+            last = prev;
             return removed;
         }
         /**
@@ -153,7 +160,7 @@ class CircularLinkedList  {
         void clear() {
             // If the list is already empty, return
             if(last == nullptr) {
-                std::cout << "\nClearing a already empty list!\n";
+                std::cout << "Clearing a already empty list!\n";
                 return;
             }
             // start with the head to start deletion
@@ -187,7 +194,6 @@ class CircularLinkedList  {
             if(last == nullptr) {
                 return 0;
             }
-
             int count = 0;
             Node* curr = last->next;
             // Count the items in list
@@ -195,7 +201,6 @@ class CircularLinkedList  {
                 count++;
                 curr = curr->next;
             } while (curr != last->next);
-
             return count;
         }
 };
