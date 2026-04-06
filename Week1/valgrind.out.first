@@ -1,0 +1,76 @@
+Sat Apr  4 19:37:48 UTC 2026
+==22820== Memcheck, a memory error detector
+==22820== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==22820== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==22820== Command: ./a.out
+==22820== 
+Integer address: 0x4da0c80
+oops
+4 3 2 1 0 
+==22820== 
+==22820== HEAP SUMMARY:
+==22820==     in use at exit: 3,148 bytes in 23 blocks
+==22820==   total heap usage: 36 allocs, 13 frees, 80,393 bytes allocated
+==22820== 
+==22820== 4 bytes in 1 blocks are definitely lost in loss record 1 of 11
+==22820==    at 0x4844FB5: operator new(unsigned long) (vg_replace_malloc.c:487)
+==22820==    by 0x4012D7: leak1() (memleak.cpp:12)
+==22820==    by 0x401730: main (memleak.cpp:158)
+==22820== 
+==22820== 4 bytes in 1 blocks are definitely lost in loss record 2 of 11
+==22820==    at 0x4844FB5: operator new(unsigned long) (vg_replace_malloc.c:487)
+==22820==    by 0x401350: leak3() (memleak.cpp:43)
+==22820==    by 0x40173A: main (memleak.cpp:160)
+==22820== 
+==22820== 16 bytes in 1 blocks are definitely lost in loss record 3 of 11
+==22820==    at 0x4844FB5: operator new(unsigned long) (vg_replace_malloc.c:487)
+==22820==    by 0x401606: leak6() (memleak.cpp:129)
+==22820==    by 0x401749: main (memleak.cpp:163)
+==22820== 
+==22820== 80 (16 direct, 64 indirect) bytes in 1 blocks are definitely lost in loss record 5 of 11
+==22820==    at 0x4844FB5: operator new(unsigned long) (vg_replace_malloc.c:487)
+==22820==    by 0x401676: addNode(int, Node*) (memleak.cpp:138)
+==22820==    by 0x4016C2: leak7() (memleak.cpp:145)
+==22820==    by 0x40174E: main (memleak.cpp:164)
+==22820== 
+==22820== 255 bytes in 1 blocks are definitely lost in loss record 6 of 11
+==22820==    at 0x4846743: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==22820==    by 0x401425: leak4() (memleak.cpp:56)
+==22820==    by 0x40173F: main (memleak.cpp:161)
+==22820== 
+==22820== 255 bytes in 1 blocks are definitely lost in loss record 7 of 11
+==22820==    at 0x4846743: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==22820==    by 0x401446: leak4() (memleak.cpp:57)
+==22820==    by 0x40173F: main (memleak.cpp:161)
+==22820== 
+==22820== 255 bytes in 1 blocks are definitely lost in loss record 8 of 11
+==22820==    at 0x4846743: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==22820==    by 0x401467: leak4() (memleak.cpp:58)
+==22820==    by 0x40173F: main (memleak.cpp:161)
+==22820== 
+==22820== 255 bytes in 1 blocks are definitely lost in loss record 9 of 11
+==22820==    at 0x4846743: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==22820==    by 0x401488: leak4() (memleak.cpp:59)
+==22820==    by 0x40173F: main (memleak.cpp:161)
+==22820== 
+==22820== 1,000 bytes in 10 blocks are definitely lost in loss record 10 of 11
+==22820==    at 0x4846743: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==22820==    by 0x4018EF: BufferManager::BufferManager(int, int) (memleak.cpp:79)
+==22820==    by 0x4014F8: leak5() (memleak.cpp:105)
+==22820==    by 0x401744: main (memleak.cpp:162)
+==22820== 
+==22820== 1,024 bytes in 1 blocks are definitely lost in loss record 11 of 11
+==22820==    at 0x4846743: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==22820==    by 0x4017DF: Reader::Reader(unsigned int) (memleak.cpp:25)
+==22820==    by 0x401325: leak2() (memleak.cpp:33)
+==22820==    by 0x401735: main (memleak.cpp:159)
+==22820== 
+==22820== LEAK SUMMARY:
+==22820==    definitely lost: 3,084 bytes in 19 blocks
+==22820==    indirectly lost: 64 bytes in 4 blocks
+==22820==      possibly lost: 0 bytes in 0 blocks
+==22820==    still reachable: 0 bytes in 0 blocks
+==22820==         suppressed: 0 bytes in 0 blocks
+==22820== 
+==22820== For lists of detected and suppressed errors, rerun with: -s
+==22820== ERROR SUMMARY: 10 errors from 10 contexts (suppressed: 0 from 0)

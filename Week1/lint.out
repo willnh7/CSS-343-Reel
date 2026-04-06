@@ -1,6 +1,99 @@
-5.14.0-611.13.1.el9_7.x86_64
-Mon Mar 30 10:31:18 AM PDT 2026
-/home/NETID/wills69/CSS343/hello.cpp:7:28: warning: do not use 'endl' with streams; use '\n' instead [performance-avoid-endl]
-    7 |     cout << "Hello boy" << endl;
-      |                            ^~~~
-      |                            '\n'
+6.6.87.2-microsoft-standard-WSL2
+Sat Apr  4 20:10:39 UTC 2026
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:2:1: warning: included header algorithm is not used directly [misc-include-cleaner]
+    2 | #include <algorithm>
+      | ^~~~~~~~~~~~~~~~~~~~
+    3 | #include <iostream>
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:23:20: warning: member variable 'pBuffer' has public visibility [misc-non-private-member-variables-in-classes]
+   23 |     unsigned char* pBuffer;
+      |                    ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:24:14: warning: member variable 'cbBuffer' has public visibility [misc-non-private-member-variables-in-classes]
+   24 |     unsigned cbBuffer;
+      |              ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:29:14: warning: method 'readFromNetwork' can be made static [readability-convert-member-functions-to-static]
+   29 |     unsigned readFromNetwork() {
+      |              ^
+      |     static 
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:30:16: warning: 255 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   30 |         return 255; // pretend we read 255 bytes from network into our buffer
+      |                ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:40:19: warning: 1024 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   40 |     Reader reader(1024);
+      |                   ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:41:5: warning: variable 'bytesRead' of type 'unsigned int' can be declared 'const' [misc-const-correctness]
+   41 |     unsigned bytesRead = reader.readFromNetwork();
+      |     ^
+      |              const 
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:53:25: warning: no header providing "std::exception" is directly included [misc-include-cleaner]
+    3 |     } catch (const std::exception& e){
+      |                         ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:54:29: warning: do not use 'endl' with streams; use '\n' instead [performance-avoid-endl]
+   54 |         cout << e.what() << endl;
+      |                             ^~~~
+      |                             '\n'
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:63:23: warning: redundant explicit casting to the same type 'char *' as the sub-expression, remove this casting [readability-redundant-casting]
+   63 |     buffers.push_back((char*) new char[255]);
+      |                       ^~~~~~~
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:63:40: warning: 255 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   63 |     buffers.push_back((char*) new char[255]);
+      |                                        ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:64:23: warning: redundant explicit casting to the same type 'char *' as the sub-expression, remove this casting [readability-redundant-casting]
+   64 |     buffers.push_back((char*) new char[255]);
+      |                       ^~~~~~~
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:64:40: warning: 255 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   64 |     buffers.push_back((char*) new char[255]);
+      |                                        ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:65:23: warning: redundant explicit casting to the same type 'char *' as the sub-expression, remove this casting [readability-redundant-casting]
+   65 |     buffers.push_back((char*) new char[255]);
+      |                       ^~~~~~~
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:65:40: warning: 255 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   65 |     buffers.push_back((char*) new char[255]);
+      |                                        ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:66:23: warning: redundant explicit casting to the same type 'char *' as the sub-expression, remove this casting [readability-redundant-casting]
+   66 |     buffers.push_back((char*) new char[255]);
+      |                       ^~~~~~~
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:66:40: warning: 255 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   66 |     buffers.push_back((char*) new char[255]);
+      |                                        ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:85:19: warning: 2 adjacent parameters of 'BufferManager' of similar type ('int') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   85 |     BufferManager(int numBuffers, int bufferSize):
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:85:23: note: the first parameter in the range is 'numBuffers'
+   85 |     BufferManager(int numBuffers, int bufferSize):
+      |                       ^~~~~~~~~~
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:85:39: note: the last parameter in the range is 'bufferSize'
+   85 |     BufferManager(int numBuffers, int bufferSize):
+      |                                       ^~~~~~~~~~
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:113:5: warning: variable 'numBuffers' of type 'int' can be declared 'const' [misc-const-correctness]
+  113 |     int numBuffers = 10;
+      |     ^
+      |         const 
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:113:22: warning: 10 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  113 |     int numBuffers = 10;
+      |                      ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:114:5: warning: variable 'bufSize' of type 'int' can be declared 'const' [misc-const-correctness]
+  114 |     int bufSize = 100;
+      |     ^
+      |         const 
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:114:19: warning: 100 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  114 |     int bufSize = 100;
+      |                   ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:115:19: warning: variable name 'bm' is too short, expected at least 3 characters [readability-identifier-length]
+  115 |     BufferManager bm(numBuffers, bufSize);
+      |                   ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:118:24: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  118 |     for(int i = 0; i < 5; i++) {
+      |                        ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:119:9: warning: 'push_back' is called inside a loop; consider pre-allocating the container capacity before the loop [performance-inefficient-vector-operation]
+  118 |     for(int i = 0; i < 5; i++) {
+  119 |         acquired.push_back(bm.getBuffer());
+      |         ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:132:9: warning: member variable 'val' has public visibility [misc-non-private-member-variables-in-classes]
+  132 |     int val;
+      |         ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:133:11: warning: member variable 'pNext' has public visibility [misc-non-private-member-variables-in-classes]
+  133 |     Node* pNext;
+      |           ^
+/home/cssuwbstudent/CSS343/Week1/memleak.cpp:154:24: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  154 |     for(int i = 0; i < 5; i++) {
+      |                        ^
