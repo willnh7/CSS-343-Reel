@@ -2,8 +2,7 @@
 #include <string>
 #include <cstdint>
 
-
-
+// namespaces for the flags used
 namespace BreakUps {
     const std::uint32_t ITS_NOT_YOU_ITS_ME = 1;
     const std::uint32_t I_NEED_TO_FOCUS_ON_MYSELF = 1 << 1;
@@ -12,8 +11,9 @@ namespace BreakUps {
     const std::uint32_t ESCORT_OUT_IMMEDIATE = 1 << 4;
     const std::uint32_t ZAP_WITH_LAZER = 1 << 5;
 }
+// Called before the rest so I don't have to type the BreakUps:: everytime
 using namespace BreakUps;
-
+// The terminate, using bitwise, on and off switch. 
 void terminate (const std::string& name, const std::uint32_t flags) {
     std::cout << "Sorry " << name << ". ";
     if(flags & ITS_NOT_YOU_ITS_ME) {
@@ -44,11 +44,13 @@ int main() {
         ITS_NOT_YOU_ITS_ME 
         | THIS_IS_BETTER_FOR_EVERYONE 
         | I_NEED_TO_FOCUS_ON_MYSELF);
-    terminate("Soccer moms", I_DONT_DESERVE_YOU_NEVER_HAVE 
+    terminate("Soccer moms", 
+        I_DONT_DESERVE_YOU_NEVER_HAVE 
         | THIS_IS_BETTER_FOR_EVERYONE 
         | ESCORT_OUT_IMMEDIATE 
         | ZAP_WITH_LAZER);
-    terminate("Stranger", I_DONT_DESERVE_YOU_NEVER_HAVE 
+    terminate("Stranger", 
+        I_DONT_DESERVE_YOU_NEVER_HAVE 
         | THIS_IS_BETTER_FOR_EVERYONE 
         | ESCORT_OUT_IMMEDIATE 
         | ZAP_WITH_LAZER);
