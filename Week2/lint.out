@@ -1,0 +1,14 @@
+6.6.87.2-microsoft-standard-WSL2
+Mon Apr  6 19:48:33 UTC 2026
+/home/cssuwbstudent/CSS343/Week2/howHigh.cpp:13:6: warning: function 'high' is within a recursive call chain [misc-no-recursion]
+   13 | void high(Node* root, int depth) {
+      |      ^
+/home/cssuwbstudent/CSS343/Week2/howHigh.cpp:13:6: note: example recursive call chain, starting from function 'high'
+/home/cssuwbstudent/CSS343/Week2/howHigh.cpp:20:9: note: Frame #1: function 'high' calls function 'high' here:
+   20 |         high(root->pLeft, depth + 1);
+      |         ^
+/home/cssuwbstudent/CSS343/Week2/howHigh.cpp:20:9: note: ... which was the starting point of the recursive call chain; there may be other cycles
+/home/cssuwbstudent/CSS343/Week2/howHigh.cpp:25:5: warning: redundant return statement at the end of a function with a void return type [readability-redundant-control-flow]
+   25 |     return;
+      |     ^~~~~~~
+   26 | }

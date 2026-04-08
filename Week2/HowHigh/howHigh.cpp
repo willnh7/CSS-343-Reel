@@ -9,15 +9,20 @@ public:
   Node* pRight;
 };
 
-void high(Node* root, int edges) {
-    if(root == nullptr) return;
-    std::cout << root->value << " &  height " << edges << "\n"; 
+// root to node(depth) 
+void high(Node* root, int depth) {
+    if(root == nullptr) { 
+        return; 
+    }
+   
+    std::cout << root->value << " & depth " << depth << "\n"; 
     if ( root->pLeft != nullptr) {
-        high(root->pLeft, edges++);
+        high(root->pLeft, depth + 1);
     }
     if ( root->pRight != nullptr) {
-        high(root->pRight, edges++);
+        high(root->pRight, depth + 1);
     }
+    return;
 }
 
 

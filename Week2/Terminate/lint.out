@@ -1,0 +1,26 @@
+6.6.87.2-microsoft-standard-WSL2
+Wed Apr  8 00:18:55 UTC 2026
+/home/cssuwbstudent/CSS343/Week2/Terminate/terminate.cpp:19:8: warning: implicit conversion 'std::uint32_t' (aka 'unsigned int') -> 'bool' [readability-implicit-bool-conversion]
+   19 |     if(flags & ITS_NOT_YOU_ITS_ME) {
+      |        ^                         
+      |        (                         ) != 0u
+/home/cssuwbstudent/CSS343/Week2/Terminate/terminate.cpp:22:8: warning: implicit conversion 'std::uint32_t' (aka 'unsigned int') -> 'bool' [readability-implicit-bool-conversion]
+   22 |     if(flags & I_NEED_TO_FOCUS_ON_MYSELF) {
+      |        ^                                
+      |        (                                ) != 0u
+/home/cssuwbstudent/CSS343/Week2/Terminate/terminate.cpp:25:8: warning: implicit conversion 'std::uint32_t' (aka 'unsigned int') -> 'bool' [readability-implicit-bool-conversion]
+   25 |     if(flags & THIS_IS_BETTER_FOR_EVERYONE) {
+      |        ^                                  
+      |        (                                  ) != 0u
+/home/cssuwbstudent/CSS343/Week2/Terminate/terminate.cpp:28:8: warning: implicit conversion 'std::uint32_t' (aka 'unsigned int') -> 'bool' [readability-implicit-bool-conversion]
+   28 |     if(flags & I_DONT_DESERVE_YOU_NEVER_HAVE) {
+      |        ^                                    
+      |        (                                    ) != 0u
+/home/cssuwbstudent/CSS343/Week2/Terminate/terminate.cpp:31:8: warning: implicit conversion 'std::uint32_t' (aka 'unsigned int') -> 'bool' [readability-implicit-bool-conversion]
+   31 |     if(flags & ESCORT_OUT_IMMEDIATE) {
+      |        ^                           
+      |        (                           ) != 0u
+/home/cssuwbstudent/CSS343/Week2/Terminate/terminate.cpp:34:8: warning: implicit conversion 'std::uint32_t' (aka 'unsigned int') -> 'bool' [readability-implicit-bool-conversion]
+   34 |     if(flags & ZAP_WITH_LAZER) {
+      |        ^                     
+      |        (                     ) != 0u
