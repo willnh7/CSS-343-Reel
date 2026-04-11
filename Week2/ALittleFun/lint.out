@@ -1,0 +1,18 @@
+6.6.87.2-microsoft-standard-WSL2
+Sat Apr 11 04:05:16 UTC 2026
+/home/cssuwbstudent/CSS343/Week2/ALittleFun/ALittleFun.cpp:58:21: warning: method 'toHexString' can be made const [readability-make-member-function-const]
+   58 |         std::string toHexString(std::vector<uint8_t> bytes, const std::string& delim = "") {
+      |                     ^
+      |                                                                                            const
+/home/cssuwbstudent/CSS343/Week2/ALittleFun/ALittleFun.cpp:140:41: warning: 12 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  140 |     dataEqual("First bits: 12 written", 12, myBits.getData(myBytes));
+      |                                         ^
+/home/cssuwbstudent/CSS343/Week2/ALittleFun/ALittleFun.cpp:140:45: warning: narrowing conversion from 'size_t' (aka 'unsigned long') to signed type 'int' is implementation-defined [bugprone-narrowing-conversions]
+  140 |     dataEqual("First bits: 12 written", 12, myBits.getData(myBytes));
+      |                                             ^
+/home/cssuwbstudent/CSS343/Week2/ALittleFun/ALittleFun.cpp:161:47: warning: 16 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  161 |     dataEqual("Testing one true: 16 written", 16, mySecondBit.getData(myBytes));
+      |                                               ^
+/home/cssuwbstudent/CSS343/Week2/ALittleFun/ALittleFun.cpp:161:51: warning: narrowing conversion from 'size_t' (aka 'unsigned long') to signed type 'int' is implementation-defined [bugprone-narrowing-conversions]
+  161 |     dataEqual("Testing one true: 16 written", 16, mySecondBit.getData(myBytes));
+      |                                                   ^
