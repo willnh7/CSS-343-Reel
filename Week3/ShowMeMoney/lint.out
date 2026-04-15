@@ -1,0 +1,41 @@
+6.6.87.2-microsoft-standard-WSL2
+Wed Apr 15 00:54:16 UTC 2026
+/home/cssuwbstudent/CSS343/Week3/ShowMeMoney/MoneyMaker.cpp:13:16: warning: member variable 'name' has public visibility [misc-non-private-member-variables-in-classes]
+   13 |         string name;
+      |                ^
+/home/cssuwbstudent/CSS343/Week3/ShowMeMoney/MoneyMaker.cpp:14:13: warning: member variable 'income' has public visibility [misc-non-private-member-variables-in-classes]
+   14 |         int income;
+      |             ^
+/home/cssuwbstudent/CSS343/Week3/ShowMeMoney/MoneyMaker.cpp:25:19: warning: member variable 'myLead' has public visibility [misc-non-private-member-variables-in-classes]
+   25 |         SalesLead myLead;
+      |                   ^
+/home/cssuwbstudent/CSS343/Week3/ShowMeMoney/MoneyMaker.cpp:26:13: warning: member variable 'seqno' has public visibility [misc-non-private-member-variables-in-classes]
+   26 |         int seqno;
+      |             ^
+/home/cssuwbstudent/CSS343/Week3/ShowMeMoney/MoneyMaker.cpp:28:61: warning: no header providing "std::move" is directly included [misc-include-cleaner]
+    3 |         PQItem(SalesLead inLead, int mySeqno) : myLead(std::move(inLead)), seqno(mySeqno) {}
+      |                                                             ^
+/home/cssuwbstudent/CSS343/Week3/ShowMeMoney/MoneyMaker.cpp:57:47: warning: 3000 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   57 |     leadQueue.push(PQItem(SalesLead("Jamaaa", 3000),currentSeq++));
+      |                                               ^
+/home/cssuwbstudent/CSS343/Week3/ShowMeMoney/MoneyMaker.cpp:59:46: warning: 20000 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   59 |     leadQueue.push(PQItem(SalesLead("Bella", 20000),currentSeq++));
+      |                                              ^
+/home/cssuwbstudent/CSS343/Week3/ShowMeMoney/MoneyMaker.cpp:67:46: warning: 3000 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   67 |     leadQueue.push(PQItem(SalesLead("Yolla", 3000),currentSeq++));
+      |                                              ^
+/home/cssuwbstudent/CSS343/Week3/ShowMeMoney/MoneyMaker.cpp:68:48: warning: 3000 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   68 |     leadQueue.push(PQItem(SalesLead("Michale", 3000),currentSeq++));
+      |                                                ^
+/home/cssuwbstudent/CSS343/Week3/ShowMeMoney/MoneyMaker.cpp:78:51: warning: 9000 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   78 |     leadQueue.push(PQItem(SalesLead("Kevin Hart", 9000),currentSeq++));
+      |                                                   ^
+/home/cssuwbstudent/CSS343/Week3/ShowMeMoney/MoneyMaker.cpp:79:54: warning: 4500 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   79 |     leadQueue.push(PQItem(SalesLead("Freddy Kruger", 4500),currentSeq++));
+      |                                                      ^
+/home/cssuwbstudent/CSS343/Week3/ShowMeMoney/MoneyMaker.cpp:80:55: warning: 5000 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   80 |     leadQueue.push(PQItem(SalesLead("Luke Skywalker", 5000),currentSeq++));
+      |                                                       ^
+/home/cssuwbstudent/CSS343/Week3/ShowMeMoney/MoneyMaker.cpp:81:46: warning: 100000 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   81 |     leadQueue.push(PQItem(SalesLead("JOJO!", 100000),currentSeq++));
+      |                                              ^
