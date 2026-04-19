@@ -1,6 +1,4 @@
 #pragma once
-
-
 /**
  * This is a zero based heap so that all insertion and deletion
  * will occur using the zero based parents and children.
@@ -28,9 +26,29 @@ class Heap {
             }
             data[idx] = value;
         }
-
+        /**
+         * This downheaps the heap to allow for the smallest to remain in the first element.
+         * Follows the min-heap data structure
+         */
         void downHeap(int idx) {
+            T value = data[idx];
+            int size = data.size();
 
+            while((idx * 2) + 1 < size) {
+                // the parents first child
+                int idxChild = (idx * 2) + 1;
+                // Finds the min index
+                if(idxChild + 1 < size && compare(data[idxChild + 1], data[idxChild])) {
+                    idxChild++;
+                }
+                // The curr value is already the min so you stop
+                if(compare(value, data[idxChild])) {
+                    break;
+                }
+                data[idx] = data[idxChild];
+                idx = idxChild;
+            }
+            data[idx] = value;
         }
 
     public:
@@ -38,7 +56,7 @@ class Heap {
          * This is the method that is contains abstraction for 
          * inserting into a heap. Taken from the slides
          */
-        void add(const T& item) {
+        void add(const T& value) {
             data.push_back(value); 
             upHeap(data.size()-1);
         }
@@ -51,5 +69,11 @@ class Heap {
             data.pop_back();
             downHeap(0);
             return ret;
+        }
+        /**
+         * Size for the heap.
+         */
+        size_t size() {
+            return data.size();
         }
 };

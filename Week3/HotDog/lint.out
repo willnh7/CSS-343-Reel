@@ -1,0 +1,54 @@
+6.6.87.2-microsoft-standard-WSL2
+Sun Apr 19 19:21:09 UTC 2026
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:98:16: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   98 |     myHeap.add(5); 
+      |                ^
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:120:39: warning: 10 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  120 |     myHeap.add(Foodstuff("Expensive", 10, 100));
+      |                                       ^
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:120:43: warning: 100 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  120 |     myHeap.add(Foodstuff("Expensive", 10, 100));
+      |                                           ^
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:121:33: warning: 10 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  121 |     myHeap.add(Foodstuff("Mid", 10, 10));
+      |                                 ^
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:121:37: warning: 10 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  121 |     myHeap.add(Foodstuff("Mid", 10, 10));
+      |                                     ^
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:122:38: warning: 100 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  122 |     myHeap.add(Foodstuff("Cheapest", 100, 10)); 
+      |                                      ^
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:122:43: warning: 10 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  122 |     myHeap.add(Foodstuff("Cheapest", 100, 10)); 
+      |                                           ^
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:124:5: warning: variable 'cheapest' of type 'Foodstuff' can be declared 'const' [misc-const-correctness]
+  124 |     Foodstuff cheapest = myHeap.remove();
+      |     ^
+      |               const 
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:146:13: warning: 21324 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  146 |     Rng rng(21324); 
+      |             ^
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:148:31: warning: variable name 'h' is too short, expected at least 3 characters [readability-identifier-length]
+  148 |     Heap<Foodstuff, Cheapest> h;
+      |                               ^
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:151:24: warning: 10 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  151 |     for(int i = 0; i < 10; i++) {
+      |                        ^
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:152:26: warning: 10 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  152 |         while(h.size() < 10) {
+      |                          ^
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:153:13: warning: variable 'ingredient' of type 'Foodstuff' can be declared 'const' [misc-const-correctness]
+  153 |             Foodstuff ingredient = getRandomFoodstuff(rng);
+      |             ^
+      |                       const 
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:161:9: warning: variable 'ingredient' of type 'Foodstuff' can be declared 'const' [misc-const-correctness]
+  161 |     for(Foodstuff ingredient : ingredients) {
+      |         ^
+      |                   const 
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:161:19: warning: loop variable is copied but only used as const reference; consider making it a const reference [performance-for-range-copy]
+  161 |     for(Foodstuff ingredient : ingredients) {
+      |                   ^
+      |         const    &
+/home/cssuwbstudent/CSS343/Week3/HotDog/main.cpp:162:9: warning: no header providing "printf" is directly included [misc-include-cleaner]
+    1 |         printf("%-12s - cost: %3d  weight: %3d  CostPerPound: %3f\n", ingredient.name.c_str(), ingredient.cost, ingredient.weight, ingredient.getCostPerPound());
+      |         ^
