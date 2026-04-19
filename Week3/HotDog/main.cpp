@@ -2,8 +2,8 @@
 #include <string>
 #include "rng.h"
 #include "foodstuff.h"
-#include "heap.h"   // TODO
-#include "functors.h" // TODO
+#include "heap.h"   // Finished
+#include "functors.h" // Finished
 
 using std::cout;
 using std::string;
