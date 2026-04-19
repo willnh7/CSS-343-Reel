@@ -26,7 +26,7 @@ class Heap {
         void add(const T& item) {
             //TODO:
             data.push_back(value); 
-            upheap(data.size()-1);
+            upHeap(data.size()-1);
         }
 
     
